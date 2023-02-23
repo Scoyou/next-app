@@ -91,8 +91,8 @@ export default function Navbar({ navHeader }) {
     <div
       className={
         changeBackground
-          ? 'fixed top-0 py-4 z-50 center-text w-screen grid grid-cols-3  place-items-center bg-nav-background transition duration-150 ease-in-out'
-          : 'fixed top-0 py-4 z-50 center-text w-screen grid grid-cols-3  place-items-center transition duration-150 ease-in-out'
+          ? 'fixed top-0 py-4 z-50 center-text w-screen sm:grid sm:grid-cols-3  place-items-center bg-nav-background transition duration-150 ease-in-out'
+          : 'fixed top-0 py-4 z-50 center-text w-screen sm:grid sm:grid-cols-3  place-items-center transition duration-150 ease-in-out'
       }
     >
       <div></div>
