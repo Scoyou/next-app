@@ -1,15 +1,18 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
 import HomePageCard from './components/home-page-card'
-
-const inter = Inter({ subsets: ['latin'] })
+import Navbar from './components/navbar'
+import ProjectsCarousel from './components/projects-carousel'
 
 export default function Home() {
   return (
     <>
-       <HomePageCard />
+      <div className="grid place-items-center">
+        <Navbar />
+        <div className="grid sm:h-screen place-items-center">
+          <HomePageCard />
+        </div>
+
+        <ProjectsCarousel />
+      </div>
     </>
   )
 }
