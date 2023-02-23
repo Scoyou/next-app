@@ -7,11 +7,11 @@ export default function Home() {
     <>
       <div className="grid place-items-center">
         <Navbar />
-        <div className="grid sm:h-screen place-items-center">
+        <div className="relative">
           <HomePageCard />
-        </div>
 
-        <ProjectsCarousel />
+          <ProjectsCarousel />
+        </div>
       </div>
     </>
   )

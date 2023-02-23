@@ -2,7 +2,7 @@ import React from 'react'
 import Typewriter from 'typewriter-effect'
 
 const HomePageCard = () => (
-  <div id="home" className="max-w-md mx-auto overflow-hidden md:max-w-2xl ">
+  <div id="home" className="max-w-md mx-auto overflow-hidden md:max-w-2xl grid h-screen place-items-center">
     <div className="md:flex">
       <div className="p-8">
         <h1 className="font-mono text-xl text-white">Hello, I'm Scott Young</h1>
