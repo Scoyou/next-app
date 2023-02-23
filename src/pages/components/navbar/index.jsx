@@ -72,23 +72,24 @@ export default function Navbar({ navHeader }) {
     return () => {
       document.removeEventListener('scroll', handleScroll)
     }
-  }, [])
+  })
 
   return (
     <div className="fixed top-10 z-50 center-text">
-      {navHeader.map((header, index) => (
-        <a
-          key={index + header.headerID}
-          className={
-            activeIndex === index
-              ? 'inline-block mx-3 text-sky-700 text-lg'
-              : 'inline-block mx-3 hover:text-sky-700 text-lg'
-          }
-          href={`#${header.headerID}`}
-        >
-          {header.headerTitle}
-        </a>
-      ))}
+      {navHeader &&
+        navHeader.map((header, index) => (
+          <a
+            key={index + header.headerID}
+            className={
+              activeIndex === index
+                ? 'inline-block mx-3 text-sky-700 text-lg'
+                : 'inline-block mx-3 hover:text-sky-700 text-lg'
+            }
+            href={`#${header.headerID}`}
+          >
+            {header.headerTitle}
+          </a>
+        ))}
     </div>
   )
 }

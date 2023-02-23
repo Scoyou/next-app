@@ -8,7 +8,9 @@ const HomePageCard = () => (
   >
     <div className="md:flex">
       <div className="p-8">
-        <h1 className="font-mono text-xl text-white">Hello, I'm Scott Young</h1>
+        <h1 className="font-mono text-xl text-white">
+          Hello, I&apos;m Scott Young
+        </h1>
         <div className="tracking-wide text-md text-white font-semibold">
           {' '}
           <h2 className="inline-block mr-2 font-mono">I am</h2>
