@@ -7,7 +7,7 @@ type ProjectCardProps = {
   technologies: string
 }
 const ProjectCard = (props: ProjectCardProps) => (
-  <div className="outline-black box-shadow center-text bg-slate-800 hover:transform hover:scale-110 transition ease-in-out duration-400">
+  <div className="outline-black box-shadow center-text bg-slate-800 hover:transform hover:scale-110 transition ease-in-out duration-400 rounded-lg">
     <Image
       loader={() => props.image}
       src={props.image}
