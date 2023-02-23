@@ -27,7 +27,7 @@ const HomePageCard = () => (
           </h2>
         </div>
         <br />
-        <p className="mt-2 text-slate-500">
+        <p className="mt-2 text-slate-400">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

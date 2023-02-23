@@ -75,14 +75,14 @@ export default function Navbar({ navHeader }) {
   }, [])
 
   return (
-    <div className="fixed top-0 z-50">
+    <div className="fixed top-10 z-50 center-text">
       {navHeader.map((header, index) => (
         <a
           key={index + header.headerID}
           className={
             activeIndex === index
-              ? 'float-left mr-5 text-sky-700 text-lg'
-              : 'float-left mr-5 hover:text-sky-700 text-lg'
+              ? 'inline-block mx-3 text-sky-700 text-lg'
+              : 'inline-block mx-3 hover:text-sky-700 text-lg'
           }
           href={`#${header.headerID}`}
         >

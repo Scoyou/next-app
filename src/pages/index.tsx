@@ -32,7 +32,7 @@ export default function Home() {
       <div className="grid place-items-center">
         <Navbar navHeader={navHeader} />
         <div className="relative">
-          <div className="bg-header-image" ref={home}>
+          <div className="bg-hero-image" ref={home}>
             <HomePageCard />
           </div>
 
