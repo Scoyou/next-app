@@ -2,14 +2,17 @@ import React from 'react'
 import Typewriter from 'typewriter-effect'
 
 const HomePageCard = () => (
-  <div id="home" className="max-w-md mx-auto overflow-hidden md:max-w-2xl grid h-screen place-items-center">
+  <div
+    id="home"
+    className="max-w-md mx-auto overflow-hidden md:max-w-2xl grid h-screen place-items-center text-center"
+  >
     <div className="md:flex">
       <div className="p-8">
         <h1 className="font-mono text-xl text-white">Hello, I'm Scott Young</h1>
         <div className="tracking-wide text-md text-white font-semibold">
           {' '}
-          <h2 className="float-left mr-2 font-mono">I am</h2>
-          <h2 className="float-left text-lime-600 font-mono">
+          <h2 className="inline-block mr-2 font-mono">I am</h2>
+          <h2 className="inline-block text-lime-600 font-mono">
             <Typewriter
               options={{
                 strings: [
