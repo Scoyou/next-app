@@ -38,6 +38,15 @@ const HomePageCard = () => (
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
+        <br />
+        <button
+          className="hover:text-teal-500 hover:underline font-medium"
+          onClick={() => {
+            window.location.replace('#contact')
+          }}
+        >
+          Let&apos;s work together
+        </button>
       </div>
     </div>
   </div>

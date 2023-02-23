@@ -13,6 +13,12 @@ module.exports = {
       backgroundSize: {
         'hero-image': 'cover',
       },
+      backgroundColor: {
+        'nav-background': 'rgba(0, 0, 0, 0.61)'
+      },
+      backdropFilter: {
+        'nav-background': 'blur(5px)'
+      },
     },
   },
   plugins: [],

@@ -58,6 +58,19 @@ const nearestIndex = (
 
 export default function Navbar({ navHeader }) {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [changeBackground, setChangeBackground] = useState(false)
+
+  useEffect(() => {
+    const changeNavbarColor = () => {
+      if (window.scrollY >= 80) {
+        setChangeBackground(true)
+      } else {
+        setChangeBackground(false)
+      }
+    }
+    window.addEventListener('scroll', changeNavbarColor)
+  })
+
   useEffect(() => {
     const handleScroll = (e) => {
       var index = nearestIndex(
@@ -75,21 +88,31 @@ export default function Navbar({ navHeader }) {
   })
 
   return (
-    <div className="fixed top-10 z-50 center-text">
-      {navHeader &&
-        navHeader.map((header, index) => (
-          <a
-            key={index + header.headerID}
-            className={
-              activeIndex === index
-                ? 'inline-block mx-3 text-sky-700 text-lg'
-                : 'inline-block mx-3 hover:text-sky-700 text-lg'
-            }
-            href={`#${header.headerID}`}
-          >
-            {header.headerTitle}
-          </a>
-        ))}
+    <div
+      className={
+        changeBackground
+          ? 'fixed top-0 py-4 z-50 center-text w-screen grid grid-cols-3  place-items-center bg-nav-background transition duration-150 ease-in-out'
+          : 'fixed top-0 py-4 z-50 center-text w-screen grid grid-cols-3  place-items-center transition duration-150 ease-in-out'
+      }
+    >
+      <div></div>
+      <div>
+        {navHeader &&
+          navHeader.map((header, index) => (
+            <a
+              key={index + header.headerID}
+              className={
+                activeIndex === index
+                  ? 'inline-block mx-3 text-teal-300 text-lg'
+                  : 'inline-block mx-3 hover:text-teal-300 text-lg'
+              }
+              href={`#${header.headerID}`}
+            >
+              {header.headerTitle}
+            </a>
+          ))}
+      </div>
+      <div></div>
     </div>
   )
 }
