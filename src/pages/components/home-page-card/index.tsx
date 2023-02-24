@@ -8,10 +8,10 @@ const HomePageCard = () => (
   >
     <div className="md:flex">
       <div className="p-8">
-        <h1 className="font-mono text-xl text-white">
+        <h1 className="font-mono text-2xl text-white">
           Hello, I&apos;m Scott Young
         </h1>
-        <div className="tracking-wide text-md text-white font-semibold">
+        <div className="tracking-wide text-xl text-white font-semibold">
           {' '}
           <h2 className="inline-block mr-2 font-mono">I am</h2>
           <h2 className="inline-block text-lime-600 font-mono">
@@ -29,7 +29,7 @@ const HomePageCard = () => (
           </h2>
         </div>
         <br />
-        <p className="mt-2 text-slate-400">
+        <p className="mt-2 text-slate-400 text-lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
