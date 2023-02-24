@@ -33,7 +33,7 @@ const Contact = () => {
             Get in touch
           </h2>
           <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400">
-            Have a project idea? Get in touch! I'm always interested in
+            Have a project idea? Get in touch! I&apos;m always interested in
             freelance work. Fee free to send a message if you want to chat about
             anything else as well.
           </p>
