@@ -103,8 +103,8 @@ export default function Navbar({ navHeader }) {
               key={index + header.headerID}
               className={
                 activeIndex === index
-                  ? 'inline-block mx-3 text-teal-300 text-lg'
-                  : 'inline-block mx-3 hover:text-teal-300 text-lg'
+                  ? 'inline-block mx-3 text-teal-300 text-lg transition ease-in-out duration-400'
+                  : 'inline-block mx-3 hover:text-teal-300 text-lg transition ease-in-out duration-400'
               }
               href={`#${header.headerID}`}
             >
