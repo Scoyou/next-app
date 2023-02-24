@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import PropTypes from 'prop-types'
-import { DarkThemeContext } from '../../context/theme-context'
+import { DarkThemeContext } from '../../index'
 import { Icon } from '@iconify/react'
 
 /**

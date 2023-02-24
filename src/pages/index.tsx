@@ -1,9 +1,10 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, createContext } from 'react'
 import HomePageCard from './components/home-page-card'
 import Navbar from './components/navbar'
 import ProjectsCarousel from './components/projects-carousel'
 import Contact from './components/contact'
-import { DarkThemeContext } from './context/theme-context'
+
+export const DarkThemeContext = createContext({});
 
 const Home = () => {
   const home = useRef<HTMLDivElement>(null)
