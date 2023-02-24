@@ -18,8 +18,6 @@ module.exports = {
       },
       backgroundColor: {
         "nav-background-dark": "rgba(0, 0, 0, 0.61)",
-        "nav-background-light-active": "rgba(250, 250, 250, 1)",
-        "nav-background-light-inactive": "rgba(250, 250, 250, 0.9)",
       },
       backdropFilter: {
         "nav-background": "blur(5px)",

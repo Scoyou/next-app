@@ -40,7 +40,7 @@ const HomePageCard = () => (
         </p>
         <br />
         <button
-          className="hover:text-teal-500 hover:underline font-medium"
+          className="hover:text-teal-500 hover:underline font-medium text-white"
           onClick={() => {
             window.location.replace("#contact");
           }}

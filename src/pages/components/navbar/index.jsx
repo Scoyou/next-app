@@ -98,12 +98,12 @@ export default function Navbar({ navHeader }) {
     <div
       className={
         changeBackground
-          ? "fixed top-0 py-4 z-50 center-text w-screen sm:grid sm:grid-cols-3  place-items-center bg-nav-background-light-active dark:bg-nav-background-dark transition duration-150 ease-in-out"
-          : "fixed top-0 py-4 z-50 center-text w-screen sm:grid sm:grid-cols-3  place-items-center bg-nav-background-light-inactive dark:bg-black/0 transition duration-150 ease-in-out"
+          ? "fixed top-0 py-4 z-50 center-text w-screen sm:grid sm:grid-cols-3  place-items-center bg-white shadow-2xl border-r border-black dark:bg-nav-background-dark transition duration-150 ease-in-out"
+          : "fixed top-0 py-4 z-50 center-text w-screen sm:grid sm:grid-cols-3  place-items-center bg-white dark:shadow-none dark:bg-black/0 transition duration-150 ease-in-out"
       }
     >
       <div></div>
-      <div className="dark:text-white text-black">
+      <div>
         {navHeader &&
           navHeader.map((header, index) => (
             <a
