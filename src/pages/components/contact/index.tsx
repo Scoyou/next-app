@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Map from '../google-map/'
 
 const Contact = () => {
   const [email, setEmail] = useState<string>('')
@@ -15,16 +16,26 @@ const Contact = () => {
 
   console.log(email)
 
+  const location = {
+    address: 'Salt Lake City, UT',
+    lat: 40.758701,
+    lng: -111.876183,
+  }
+
   return (
-    <div id="contact" className="h-screen grid place-items-center w-screen grid-cols-2">
-      <section className="bg-white dark:bg-gray-900 rounded-lg">
+    <div
+      id="contact"
+      className="h-screen grid place-items-center w-screen grid-cols-1 md:grid-cols-2 mt-6"
+    >
+      <section className="bg-white dark:bg-gray-900 rounded-lg h-full w-full">
         <div className="py-8 lg:py-16 px-4">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
             Get in touch
           </h2>
-          <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-            Got a technical issue? Want to send feedback about a beta feature?
-            Need details about our Business plan? Let us know.
+          <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400">
+            Have a project idea? Get in touch! I&apos;m always interested in
+            freelance work. Fee free to send a message if you want to chat about
+            anything else as well.
           </p>
           <form action="#" className="space-y-8">
             <div>
@@ -82,6 +93,9 @@ const Contact = () => {
             </button>
           </form>
         </div>
+      </section>
+      <section className="md:w-full md:h-full">
+        <Map location={location} zoomLevel={10} />
       </section>
     </div>
   )
