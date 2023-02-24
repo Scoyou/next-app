@@ -1,11 +1,11 @@
-import React from 'react'
-import Image from 'next/image'
+import React from "react";
+import Image from "next/image";
 
 type ProjectCardProps = {
-  title: string
-  image: string
-  technologies: string
-}
+  title: string;
+  image: string;
+  technologies: string;
+};
 const ProjectCard = (props: ProjectCardProps) => (
   <div className="outline-black box-shadow center-text bg-slate-800 hover:transform hover:scale-110 transition ease-in-out duration-400 rounded-lg">
     <Image
@@ -18,11 +18,14 @@ const ProjectCard = (props: ProjectCardProps) => (
     <h3>{props.title}</h3>
     <span>{props.technologies}</span>
   </div>
-)
+);
 
 const ProjectsCarousel = () => {
   return (
-    <div id="projects" className="md:h-screen grid place-items-center min-h-full">
+    <div
+      id="projects"
+      className="md:h-screen grid place-items-center min-h-full"
+    >
       <h2 className="text-center mt-6 mb-6">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 place-items-center gap-10">
         <ProjectCard
@@ -42,7 +45,7 @@ const ProjectsCarousel = () => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectsCarousel
+export default ProjectsCarousel;

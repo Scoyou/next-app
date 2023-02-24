@@ -1,14 +1,14 @@
-import React from 'react'
-import GoogleMapReact from 'google-map-react'
-import { Icon } from '@iconify/react'
-import locationIcon from '@iconify/icons-mdi/map-marker'
+import React from "react";
+import GoogleMapReact from "google-map-react";
+import { Icon } from "@iconify/react";
+import locationIcon from "@iconify/icons-mdi/map-marker";
 
 const LocationPin = ({ lat, lng, text }) => (
   <div className="pin">
     <Icon icon={locationIcon} className="pin-icon" />
     <p className="pin-text">{text}</p>
   </div>
-)
+);
 
 const Map = ({ location, zoomLevel }) => (
   <GoogleMapReact
@@ -22,6 +22,6 @@ const Map = ({ location, zoomLevel }) => (
       text={location && location.address}
     />
   </GoogleMapReact>
-)
+);
 
-export default Map
+export default Map;

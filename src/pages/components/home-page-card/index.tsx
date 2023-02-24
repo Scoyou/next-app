@@ -1,5 +1,5 @@
-import React from 'react'
-import Typewriter from 'typewriter-effect'
+import React from "react";
+import Typewriter from "typewriter-effect";
 
 const HomePageCard = () => (
   <div
@@ -12,15 +12,15 @@ const HomePageCard = () => (
           Hello, I&apos;m Scott Young
         </h1>
         <div className="tracking-wide text-xl text-white font-semibold">
-          {' '}
+          {" "}
           <h2 className="inline-block mr-2 font-mono">I am</h2>
           <h2 className="inline-block text-lime-600 font-mono">
             <Typewriter
               options={{
                 strings: [
-                  'a web designer',
-                  'a full-stack developer',
-                  'a freelancer',
+                  "a web designer",
+                  "a full-stack developer",
+                  "a freelancer",
                 ],
                 autoStart: true,
                 loop: true,
@@ -42,7 +42,7 @@ const HomePageCard = () => (
         <button
           className="hover:text-teal-500 hover:underline font-medium"
           onClick={() => {
-            window.location.replace('#contact')
+            window.location.replace("#contact");
           }}
         >
           Let&apos;s work together
@@ -50,6 +50,6 @@ const HomePageCard = () => (
       </div>
     </div>
   </div>
-)
+);
 
-export default HomePageCard
+export default HomePageCard;

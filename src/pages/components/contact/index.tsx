@@ -1,26 +1,26 @@
-import React, { useState } from 'react'
-import Map from '../google-map/'
+import React, { useState } from "react";
+import Map from "../google-map/";
 
 const Contact = () => {
-  const [email, setEmail] = useState<string>('')
-  const [message, setMessage] = useState<string>('')
-  const [subject, setSubject] = useState<string>('')
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [subject, setSubject] = useState<string>("");
 
   const handleEmailChange = (event: React.FormEvent<HTMLInputElement>) =>
-    setEmail(event.currentTarget.value)
+    setEmail(event.currentTarget.value);
 
   const handleMessageChange = (event: React.FormEvent<HTMLTextAreaElement>) =>
-    setMessage(event.currentTarget.value)
+    setMessage(event.currentTarget.value);
   const handleSubjectChange = (event: React.FormEvent<HTMLInputElement>) =>
-    setSubject(event.currentTarget.value)
+    setSubject(event.currentTarget.value);
 
-  console.log(email)
+  console.log(email);
 
   const location = {
-    address: 'Salt Lake City, UT',
+    address: "Salt Lake City, UT",
     lat: 40.758701,
     lng: -111.876183,
-  }
+  };
 
   return (
     <div
@@ -98,7 +98,7 @@ const Contact = () => {
         <Map location={location} zoomLevel={10} />
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
