@@ -7,7 +7,7 @@ type ProjectCardProps = {
   technologies: string;
 };
 const ProjectCard = (props: ProjectCardProps) => (
-  <div className="outline-black box-shadow center-text bg-slate-800 hover:transform hover:scale-110 transition ease-in-out duration-400 rounded-lg">
+  <div className="outline-black hover:shadow-xl center-text bg-slate-800 hover:transform hover:scale-110 transition ease-in-out duration-400">
     <Image
       loader={() => props.image}
       src={props.image}
@@ -26,7 +26,7 @@ const ProjectsCarousel = () => {
       id="projects"
       className="md:h-screen grid place-items-center min-h-full"
     >
-      <h2 className="text-center mt-6 mb-6">Projects</h2>
+      <h2 className="text-center mt-6 mb-6 text-xl">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 place-items-center gap-10">
         <ProjectCard
           title="project 1"

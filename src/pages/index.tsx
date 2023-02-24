@@ -36,7 +36,7 @@ const Home = () => {
         className={
           darkModeEnabled
             ? "dark grid place-items-center text-white"
-            : "text-black git grid place-items-center "
+            : "text-black git grid place-items-center bg-white"
         }
       >
         <Navbar navHeader={navHeader} />
@@ -50,7 +50,7 @@ const Home = () => {
             <HomePageCard />
           </div>
 
-          <div ref={projects} className="bg-white dark:bg-black/0">
+          <div ref={projects} className="bg-white dark:bg-black/0 ">
             <ProjectsCarousel />
           </div>
 

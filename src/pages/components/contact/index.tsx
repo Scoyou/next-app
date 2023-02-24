@@ -27,7 +27,7 @@ const Contact = () => {
       id="contact"
       className="h-screen grid place-items-center w-screen grid-cols-1 md:grid-cols-2 mt-6"
     >
-      <section className="bg-white dark:bg-gray-900 h-full w-full">
+      <section className="bg-white dark:bg-gray-900 h-full w-full border-t-2 border-slate-600 dark:border-none">
         <div className="py-8 lg:py-16 px-4">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
             Get in touch
@@ -94,7 +94,7 @@ const Contact = () => {
           </form>
         </div>
       </section>
-      <section className="md:w-full md:h-full">
+      <section className="md:w-full md:h-full border-t-2 border-slate-600 dark:border-none">
         <Map location={location} zoomLevel={10} />
       </section>
     </div>
