@@ -63,7 +63,6 @@ export default function Navbar({ navHeader }) {
   const [changeBackground, setChangeBackground] = useState(false)
 
   const { setDarkModeEnabled, darkModeEnabled } = useContext(DarkThemeContext)
-  const ACTIVE_TEXT_COLOR = darkModeEnabled ? 'text-teal-300' : 'text-teal-600'
 
   useEffect(() => {
     const changeNavbarColor = () => {
@@ -96,31 +95,31 @@ export default function Navbar({ navHeader }) {
     <div
       className={
         changeBackground
-          ? 'fixed top-0 py-4 z-50 center-text w-screen sm:grid sm:grid-cols-3  place-items-center bg-white shadow-2xl border-r border-black dark:bg-nav-background-dark transition duration-150 ease-in-out'
-          : 'fixed top-0 py-4 z-50 center-text w-screen sm:grid sm:grid-cols-3  place-items-center bg-white dark:shadow-none dark:bg-black/0 transition duration-150 ease-in-out'
+          ? 'fixed top-0 py-4 z-50 flex w-screen bg-white shadow-2xl dark:bg-nav-background-dark transition duration-150 ease-in-out'
+          : 'fixed top-0 py-4 z-50 flex w-screen bg-white dark:shadow-none dark:bg-black/0 transition duration-150 ease-in-out'
       }
     >
-      <div></div>
-      <div>
+      <div className="sm:flex justify-center align-center w-11/12">
         {navHeader &&
           navHeader.map((header, index) => (
             <a
               key={index + header.headerID}
               className={
                 activeIndex === index
-                  ? `inline-block mx-3 ${ACTIVE_TEXT_COLOR} text-lg transition ease-in-out duration-400`
-                  : `inline-block mx-3 hover:${ACTIVE_TEXT_COLOR} text-lg transition ease-in-out duration-400`
+                  ? `inline-block mx-3 text-teal-600 underline text-lg transition ease-in-out duration-400`
+                  : 'inline-block mx-3 hover:text-teal-600 text-lg transition ease-in-out duration-400'
               }
               href={`#${header.headerID}`}
             >
               {header.headerTitle}
             </a>
           ))}
+      </div>
+      <div className="w-1/12 float-right">
         <button onClick={() => setDarkModeEnabled(!darkModeEnabled)}>
-          <Icon icon={darkModeEnabled ? 'ri:moon-fill' : 'ph:sun-duotone'} />
+          <Icon icon={darkModeEnabled ? 'ri:moon-fill' : 'ph:sun-duotone'} className="text-xl"/>
         </button>
       </div>
-      <div></div>
     </div>
   )
 }
