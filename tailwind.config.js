@@ -7,14 +7,19 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-image':
-          "linear-gradient(87deg, rgba(2,0,36,0.8) 0%, rgba(23,23,40,0.8) 35%, rgba(20,56,64,0.8) 78%), url('../images/mountains-background.jpg')",
+        'hero-image-dark':
+          "linear-gradient(87deg, rgba(2,0,36,0.8) 0%, rgba(23,23,40,0.8) 35%, rgba(20,56,64,0.8) 78%), url('../images/night-mountains.jpg')",
+          'hero-image-light':
+          "linear-gradient(87deg, rgba(2,0,36,0.8) 0%, rgba(23,23,40,0.8) 35%, rgba(20,56,64,0.8) 78%), url('../images/day-mountains.jpg')",
       },
       backgroundSize: {
-        'hero-image': 'cover',
+        'hero-image-dark': 'cover',
+        'hero-image-light': 'cover',
       },
       backgroundColor: {
-        'nav-background': 'rgba(0, 0, 0, 0.61)'
+        'nav-background-dark': 'rgba(0, 0, 0, 0.61)',
+        'nav-background-light-active': 'rgba(250, 250, 250, 1)',
+        'nav-background-light-inactive': 'rgba(250, 250, 250, 0.9)'
       },
       backdropFilter: {
         'nav-background': 'blur(5px)'
@@ -22,4 +27,6 @@ module.exports = {
     },
   },
   plugins: [],
+
+  darkMode: 'class'
 }

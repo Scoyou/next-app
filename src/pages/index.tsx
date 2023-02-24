@@ -1,13 +1,15 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import HomePageCard from './components/home-page-card'
 import Navbar from './components/navbar'
 import ProjectsCarousel from './components/projects-carousel'
 import Contact from './components/contact'
+import { DarkThemeContext } from './context/theme-context'
 
-export default function Home() {
+const Home = () => {
   const home = useRef<HTMLDivElement>(null)
   const projects = useRef<HTMLDivElement>(null)
   const contact = useRef<HTMLDivElement>(null)
+  const [darkModeEnabled, setDarkModeEnabled] = useState<boolean>(true)
 
   const navHeader = [
     {
@@ -28,15 +30,26 @@ export default function Home() {
   ]
 
   return (
-    <>
-      <div className="grid place-items-center">
+    <DarkThemeContext.Provider value={{ setDarkModeEnabled, darkModeEnabled }}>
+      <div
+        className={
+          darkModeEnabled
+            ? 'dark grid place-items-center text-white'
+            : 'text-black git grid place-items-center '
+        }
+      >
         <Navbar navHeader={navHeader} />
         <div className="relative">
-          <div className="bg-hero-image" ref={home}>
+          <div
+            className={
+              darkModeEnabled ? 'bg-hero-image-dark' : 'bg-hero-image-light'
+            }
+            ref={home}
+          >
             <HomePageCard />
           </div>
 
-          <div ref={projects}>
+          <div ref={projects} className="bg-white dark:bg-black/0">
             <ProjectsCarousel />
           </div>
 
@@ -45,6 +58,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+    </DarkThemeContext.Provider>
   )
 }
+
+export default Home

@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import PropTypes from 'prop-types'
+import { DarkThemeContext } from '../../context/theme-context'
+import { Icon } from '@iconify/react'
 
 /**
  * @param {number} currentPosition Current Scroll position
@@ -60,6 +62,9 @@ export default function Navbar({ navHeader }) {
   const [activeIndex, setActiveIndex] = useState(0)
   const [changeBackground, setChangeBackground] = useState(false)
 
+  const darkThemeContext = useContext(DarkThemeContext)
+  const NAV_BACKGROUND = darkThemeContext.darkModeEnabled ? "bg-nav-background-dark" : "bg-nav-background-light"
+
   useEffect(() => {
     const changeNavbarColor = () => {
       if (window.scrollY >= 80) {
@@ -91,12 +96,12 @@ export default function Navbar({ navHeader }) {
     <div
       className={
         changeBackground
-          ? 'fixed top-0 py-4 z-50 center-text w-screen sm:grid sm:grid-cols-3  place-items-center bg-nav-background transition duration-150 ease-in-out'
-          : 'fixed top-0 py-4 z-50 center-text w-screen sm:grid sm:grid-cols-3  place-items-center transition duration-150 ease-in-out'
+          ? 'fixed top-0 py-4 z-50 center-text w-screen sm:grid sm:grid-cols-3  place-items-center bg-nav-background-light-active dark:bg-nav-background-dark transition duration-150 ease-in-out'
+          : 'fixed top-0 py-4 z-50 center-text w-screen sm:grid sm:grid-cols-3  place-items-center bg-nav-background-light-inactive dark:bg-black/0 transition duration-150 ease-in-out'
       }
     >
       <div></div>
-      <div>
+      <div className="dark:text-white text-black">
         {navHeader &&
           navHeader.map((header, index) => (
             <a
@@ -111,6 +116,21 @@ export default function Navbar({ navHeader }) {
               {header.headerTitle}
             </a>
           ))}
+        <button
+          onClick={() =>
+            darkThemeContext.setDarkModeEnabled(
+              !darkThemeContext.darkModeEnabled
+            )
+          }
+        >
+          <Icon
+            icon={
+              darkThemeContext.darkModeEnabled
+                ? 'ri:moon-fill'
+                : 'ph:sun-duotone'
+            }
+          />
+        </button>
       </div>
       <div></div>
     </div>
