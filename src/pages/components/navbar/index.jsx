@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useContext } from "react";
-import PropTypes from "prop-types";
-import { DarkThemeContext } from "../../index";
-import { Icon } from "@iconify/react";
+import React, { useEffect, useState, useContext } from 'react'
+import PropTypes from 'prop-types'
+import { DarkThemeContext } from '../../index'
+import { Icon } from '@iconify/react'
 
 /**
  * @param {number} currentPosition Current Scroll position
@@ -16,7 +16,7 @@ const nearestIndex = (
   startIndex,
   endIndex
 ) => {
-  if (startIndex === endIndex) return startIndex;
+  if (startIndex === endIndex) return startIndex
   else if (startIndex === endIndex - 1) {
     if (
       Math.abs(
@@ -28,52 +28,52 @@ const nearestIndex = (
           currentPosition
       )
     )
-      return startIndex;
-    else return endIndex;
+      return startIndex
+    else return endIndex
   } else {
-    var nextNearest = ~~((startIndex + endIndex) / 2);
+    var nextNearest = ~~((startIndex + endIndex) / 2)
     var a = Math.abs(
       sectionPositionArray[nextNearest].headerRef.current.offsetTop -
         currentPosition
-    );
+    )
     var b = Math.abs(
       sectionPositionArray[nextNearest + 1].headerRef.current.offsetTop -
         currentPosition
-    );
+    )
     if (a < b) {
       return nearestIndex(
         currentPosition,
         sectionPositionArray,
         startIndex,
         nextNearest
-      );
+      )
     } else {
       return nearestIndex(
         currentPosition,
         sectionPositionArray,
         nextNearest,
         endIndex
-      );
+      )
     }
   }
-};
+}
 
 export default function Navbar({ navHeader }) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [changeBackground, setChangeBackground] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [changeBackground, setChangeBackground] = useState(false)
 
-  const { changeTheme, isDarkModeEnabled } = useContext(DarkThemeContext);
+  const { changeTheme, isDarkModeEnabled } = useContext(DarkThemeContext)
 
   useEffect(() => {
     const changeNavbarColor = () => {
       if (window.scrollY >= 80) {
-        setChangeBackground(true);
+        setChangeBackground(true)
       } else {
-        setChangeBackground(false);
+        setChangeBackground(false)
       }
-    };
-    window.addEventListener("scroll", changeNavbarColor);
-  });
+    }
+    window.addEventListener('scroll', changeNavbarColor)
+  })
 
   useEffect(() => {
     const handleScroll = (e) => {
@@ -82,21 +82,21 @@ export default function Navbar({ navHeader }) {
         navHeader,
         0,
         navHeader.length - 1
-      );
-      setActiveIndex(index);
-    };
-    document.addEventListener("scroll", handleScroll);
+      )
+      setActiveIndex(index)
+    }
+    document.addEventListener('scroll', handleScroll)
     return () => {
-      document.removeEventListener("scroll", handleScroll);
-    };
-  });
+      document.removeEventListener('scroll', handleScroll)
+    }
+  })
 
   return (
     <div
       className={
         changeBackground
-          ? "fixed top-0 py-4 z-50 flex w-screen bg-white shadow-2xl dark:bg-nav-background-dark transition duration-150 ease-in-out"
-          : "fixed top-0 py-4 z-50 flex w-screen bg-white dark:shadow-none dark:bg-black/0 transition duration-150 ease-in-out"
+          ? 'fixed top-0 py-4 z-50 flex w-screen bg-white shadow-2xl dark:bg-nav-background-dark transition duration-150 ease-in-out'
+          : 'fixed top-0 py-4 z-50 flex w-screen bg-white dark:shadow-none dark:bg-black/0 transition duration-150 ease-in-out'
       }
     >
       <div className="w-1/12" />
@@ -108,7 +108,7 @@ export default function Navbar({ navHeader }) {
               className={
                 activeIndex === index
                   ? `inline-block mx-3 text-teal-600 border-b-2 border-teal-600 text-lg transition ease-in-out duration-400`
-                  : "inline-block mx-3 hover:text-teal-600 text-lg transition ease-in-out duration-400"
+                  : 'inline-block mx-3 hover:text-teal-600 text-lg transition ease-in-out duration-400'
               }
               href={`#${header.headerID}`}
             >
@@ -119,15 +119,15 @@ export default function Navbar({ navHeader }) {
       <div className="w-1/12 float-right">
         <button onClick={() => changeTheme()}>
           <Icon
-            icon={isDarkModeEnabled ? "ri:moon-fill" : "ph:sun-duotone"}
-            className="sm:text-xl inline-block mr-2 transition ease-in-out delay-50 hover:-translate-y-1"
+            icon={isDarkModeEnabled ? 'ri:moon-fill' : 'ph:sun-duotone'}
+            className="sm:text-xl inline-block mr-2 transition ease-in-out delay-50 hover:-translate-y-1 hover:shadow-2xl"
           />
         </button>
         <div className="hidden md:inline-block">
-          <a href="https://github.com/Scoyou" target="_blank" rel="noreferrer" >
+          <a href="https://github.com/Scoyou" target="_blank" rel="noreferrer">
             <Icon
               icon="radix-icons:github-logo"
-              className="sm:text-xl inline-block mr-2 transition ease-in-out delay-50 hover:-translate-y-1"
+              className="sm:text-xl inline-block mr-2 transition ease-in-out delay-50 hover:-translate-y-1 hover:shadow-2xl"
             />
           </a>
           <a
@@ -135,12 +135,15 @@ export default function Navbar({ navHeader }) {
             target="_blank"
             rel="noreferrer"
           >
-            <Icon icon="uiw:linkedin" className="sm:text-xl inline-block transition ease-in-out delay-50 hover:-translate-y-1" />
+            <Icon
+              icon="uiw:linkedin"
+              className="sm:text-xl inline-block transition ease-in-out delay-50 hover:-translate-y-1 hover:shadow-2xl"
+            />
           </a>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 Navbar.propTypes = {
@@ -151,4 +154,4 @@ Navbar.propTypes = {
       headerTitle: PropTypes.string.isRequired,
     })
   ).isRequired,
-};
+}
