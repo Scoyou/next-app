@@ -99,7 +99,8 @@ export default function Navbar({ navHeader }) {
           : "fixed top-0 py-4 z-50 flex w-screen bg-white dark:shadow-none dark:bg-black/0 transition duration-150 ease-in-out"
       }
     >
-      <div className="sm:flex justify-center align-center w-11/12">
+      <div className="w-1/12" />
+      <div className="sm:flex justify-center align-center w-10/12">
         {navHeader &&
           navHeader.map((header, index) => (
             <a
@@ -116,7 +117,7 @@ export default function Navbar({ navHeader }) {
           ))}
       </div>
       <div className="w-1/12 float-right">
-        <button onClick={() => setDarkModeEnabled(!darkModeEnabled)}>
+        <button onClick={() => setDarkModeEnabled()}>
           <Icon
             icon={darkModeEnabled ? "ri:moon-fill" : "ph:sun-duotone"}
             className="sm:text-xl inline-block mr-2"
