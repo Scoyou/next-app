@@ -45,7 +45,7 @@ const Home = () => {
   }
 
   return (
-    <DarkThemeContext.Provider value={{ setDarkModeEnabled: changeTheme, darkModeEnabled }}>
+    <DarkThemeContext.Provider value={{ changeTheme, darkModeEnabled }}>
       <div
         className={
           darkModeEnabled

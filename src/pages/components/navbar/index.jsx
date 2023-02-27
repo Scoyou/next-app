@@ -62,7 +62,7 @@ export default function Navbar({ navHeader }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [changeBackground, setChangeBackground] = useState(false);
 
-  const { setDarkModeEnabled, darkModeEnabled } = useContext(DarkThemeContext);
+  const { changeTheme, darkModeEnabled } = useContext(DarkThemeContext);
 
   useEffect(() => {
     const changeNavbarColor = () => {
@@ -117,7 +117,7 @@ export default function Navbar({ navHeader }) {
           ))}
       </div>
       <div className="w-1/12 float-right">
-        <button onClick={() => setDarkModeEnabled()}>
+        <button onClick={() => changeTheme()}>
           <Icon
             icon={darkModeEnabled ? "ri:moon-fill" : "ph:sun-duotone"}
             className="sm:text-xl inline-block mr-2"
