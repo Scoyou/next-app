@@ -4,7 +4,7 @@ import Typewriter from "typewriter-effect";
 const HomePageCard = () => (
   <div
     id="home"
-    className="max-w-md mx-auto overflow-hidden md:max-w-2xl grid h-screen place-items-center text-center"
+    className="max-w-md mx-auto overflow-hidden md:max-w-2xl grid h-screen place-items-center text-center z-15 relative"
   >
     <div className="md:flex">
       <div className="p-8">
