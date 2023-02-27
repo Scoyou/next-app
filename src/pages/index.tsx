@@ -3,7 +3,7 @@ import HomePageCard from './components/home-page-card'
 import Navbar from './components/navbar'
 import ProjectsCarousel from './components/projects-carousel'
 import Contact from './components/contact'
-import Image from 'next/image'
+import Image from "next/legacy/image";
 import darkHero from '../images/night-mountains.jpg'
 import lightHero from '../images/day-mountains.jpg'
 
