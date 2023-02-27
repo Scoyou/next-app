@@ -107,7 +107,7 @@ export default function Navbar({ navHeader }) {
               key={index + header.headerID}
               className={
                 activeIndex === index
-                  ? `inline-block mx-3 text-teal-600 underline text-lg transition ease-in-out duration-400`
+                  ? `inline-block mx-3 text-teal-600 border-b-2 border-teal-600 text-lg transition ease-in-out duration-400`
                   : "inline-block mx-3 hover:text-teal-600 text-lg transition ease-in-out duration-400"
               }
               href={`#${header.headerID}`}
@@ -120,14 +120,14 @@ export default function Navbar({ navHeader }) {
         <button onClick={() => changeTheme()}>
           <Icon
             icon={isDarkModeEnabled ? "ri:moon-fill" : "ph:sun-duotone"}
-            className="sm:text-xl inline-block mr-2"
+            className="sm:text-xl inline-block mr-2 transition ease-in-out delay-50 hover:-translate-y-1"
           />
         </button>
         <div className="hidden md:inline-block">
-          <a href="https://github.com/Scoyou" target="_blank" rel="noreferrer">
+          <a href="https://github.com/Scoyou" target="_blank" rel="noreferrer" >
             <Icon
               icon="radix-icons:github-logo"
-              className="sm:text-xl inline-block mr-2"
+              className="sm:text-xl inline-block mr-2 transition ease-in-out delay-50 hover:-translate-y-1"
             />
           </a>
           <a
@@ -135,7 +135,7 @@ export default function Navbar({ navHeader }) {
             target="_blank"
             rel="noreferrer"
           >
-            <Icon icon="uiw:linkedin" className="sm:text-xl inline-block" />
+            <Icon icon="uiw:linkedin" className="sm:text-xl inline-block transition ease-in-out delay-50 hover:-translate-y-1" />
           </a>
         </div>
       </div>

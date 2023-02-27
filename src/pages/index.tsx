@@ -20,6 +20,12 @@ const Home = () => {
     setIsDarkmodeEnabled(storedTheme === "dark");
   }, [isDarkModeEnabled]);
 
+  const changeTheme = () => {
+    const theme = isDarkModeEnabled ? "light" : "dark";
+    localStorage.setItem("theme", theme);
+    setIsDarkmodeEnabled(!isDarkModeEnabled);
+  };
+
   const navHeader = [
     {
       headerTitle: "Home",
@@ -37,12 +43,6 @@ const Home = () => {
       headerID: "contact",
     },
   ];
-
-  const changeTheme = () => {
-    const theme = isDarkModeEnabled ? "light" : "dark";
-    localStorage.setItem("theme", theme);
-    setIsDarkmodeEnabled(!isDarkModeEnabled);
-  };
 
   return (
     <DarkThemeContext.Provider value={{ changeTheme, isDarkModeEnabled }}>
