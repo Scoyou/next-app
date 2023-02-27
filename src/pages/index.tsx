@@ -13,12 +13,12 @@ const Home = () => {
   const home = useRef<HTMLDivElement>(null);
   const projects = useRef<HTMLDivElement>(null);
   const contact = useRef<HTMLDivElement>(null);
-  const [darkModeEnabled, setDarkModeEnabled] = useState<boolean>(true);
+  const [isDarkModeEnabled, setIsDarkmodeEnabled] = useState<boolean>(true);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
-    setDarkModeEnabled(storedTheme === "dark");
-  }, [darkModeEnabled]);
+    setIsDarkmodeEnabled(storedTheme === "dark");
+  }, [isDarkModeEnabled]);
 
   const navHeader = [
     {
@@ -39,16 +39,16 @@ const Home = () => {
   ];
 
   const changeTheme = () => {
-    const theme = darkModeEnabled ? "light" : "dark";
+    const theme = isDarkModeEnabled ? "light" : "dark";
     localStorage.setItem("theme", theme);
-    setDarkModeEnabled(!darkModeEnabled);
+    setIsDarkmodeEnabled(!isDarkModeEnabled);
   };
 
   return (
-    <DarkThemeContext.Provider value={{ changeTheme, darkModeEnabled }}>
+    <DarkThemeContext.Provider value={{ changeTheme, isDarkModeEnabled }}>
       <div
         className={
-          darkModeEnabled
+          isDarkModeEnabled
             ? "dark grid place-items-center text-white"
             : "text-black grid place-items-center"
         }
@@ -57,7 +57,7 @@ const Home = () => {
         <div>
           <div className="w-screen relative bg-hero-image-gradient" ref={home}>
             <Image
-              src={darkModeEnabled ? darkHero : lightHero}
+              src={isDarkModeEnabled ? darkHero : lightHero}
               layout="fill"
               objectFit="cover"
               objectPosition="center"
