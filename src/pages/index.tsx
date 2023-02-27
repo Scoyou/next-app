@@ -1,52 +1,58 @@
-import React, { useRef, useState, createContext } from "react";
-import HomePageCard from "./components/home-page-card";
-import Navbar from "./components/navbar";
-import ProjectsCarousel from "./components/projects-carousel";
-import Contact from "./components/contact";
+import React, { useRef, useState, createContext } from 'react'
+import HomePageCard from './components/home-page-card'
+import Navbar from './components/navbar'
+import ProjectsCarousel from './components/projects-carousel'
+import Contact from './components/contact'
+import Image from 'next/image'
+import darkHero from '../images/night-mountains.jpg'
+import lightHero from '../images/day-mountains.jpg'
 
-export const DarkThemeContext = createContext({});
+export const DarkThemeContext = createContext({})
 
 const Home = () => {
-  const home = useRef<HTMLDivElement>(null);
-  const projects = useRef<HTMLDivElement>(null);
-  const contact = useRef<HTMLDivElement>(null);
-  const [darkModeEnabled, setDarkModeEnabled] = useState<boolean>(true);
+  const home = useRef<HTMLDivElement>(null)
+  const projects = useRef<HTMLDivElement>(null)
+  const contact = useRef<HTMLDivElement>(null)
+  const [darkModeEnabled, setDarkModeEnabled] = useState<boolean>(true)
 
   const navHeader = [
     {
-      headerTitle: "Home",
+      headerTitle: 'Home',
       headerRef: home,
-      headerID: "home",
+      headerID: 'home',
     },
     {
-      headerTitle: "Projects",
+      headerTitle: 'Projects',
       headerRef: projects,
-      headerID: "projects",
+      headerID: 'projects',
     },
     {
-      headerTitle: "Contact",
+      headerTitle: 'Contact',
       headerRef: contact,
-      headerID: "contact",
+      headerID: 'contact',
     },
-  ];
+  ]
 
   return (
     <DarkThemeContext.Provider value={{ setDarkModeEnabled, darkModeEnabled }}>
       <div
         className={
           darkModeEnabled
-            ? "dark grid place-items-center text-white"
-            : "text-black grid place-items-center bg-white"
+            ? 'dark grid place-items-center text-white'
+            : 'text-black grid place-items-center'
         }
       >
         <Navbar navHeader={navHeader} />
-        <div className="relative">
-          <div
-            className={
-              darkModeEnabled ? "bg-hero-image-dark" : "bg-hero-image-light"
-            }
-            ref={home}
-          >
+        <div>
+          <div className="w-screen relative bg-hero-image-gradient" ref={home}>
+            <Image
+              src={darkModeEnabled ? darkHero : lightHero}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              alt="Mountains background"
+              className="-z-10 transition ease-in-out delay-150"
+            />
             <HomePageCard />
           </div>
           <div ref={projects} className="bg-white dark:bg-black/0">
@@ -59,7 +65,7 @@ const Home = () => {
         </div>
       </div>
     </DarkThemeContext.Provider>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

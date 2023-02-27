@@ -22,10 +22,10 @@ const ProjectCard = (props: ProjectCardProps) => (
 
 const ProjectsCarousel = () => {
   return (
-    <div className="text-center">
+    <div className="text-center bg-white dark:bg-projects-background pb-6">
       <div
         id="projects"
-        className="text-center flex items-center justify-center sm:h-screen"
+        className="text-center flex items-center justify-center md:h-screen"
       >
         <div>
           <h1 className="my-12 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">

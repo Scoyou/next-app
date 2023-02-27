@@ -25,7 +25,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="h-screen grid place-items-center w-screen grid-cols-1 md:grid-cols-2 mt-6"
+      className="h-screen grid place-items-center w-screen grid-cols-1 md:grid-cols-2"
     >
       <section className="bg-white dark:bg-gray-900 h-full w-full border-t-2 border-slate-600 dark:border-none">
         <div className="py-8 lg:py-16 px-4">

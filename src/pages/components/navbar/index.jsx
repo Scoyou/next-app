@@ -122,7 +122,7 @@ export default function Navbar({ navHeader }) {
             className="sm:text-xl inline-block mr-2"
           />
         </button>
-        <div className="hidden sm:inline-block">
+        <div className="hidden md:inline-block">
           <a href="https://github.com/Scoyou" target="_blank">
             <Icon
               icon="radix-icons:github-logo"
